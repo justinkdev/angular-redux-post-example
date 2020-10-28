@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <!-- <router-outlet></router-outlet> -->
+      <h1>Angular Redux Example</h1>
+
+      <div *ngIf="post$ |async as p">
+        <h2>{{p.text}}</h2>
+        <h4>Votes: {{p.likes}}</h4>
+      </div>
+
+      <input [(ngModel)]="text"/>
+      <button mat-raised-button color="accent" (click)="editText()">change title</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <button mat-mini-fab color="primary"
+              (click)="upvote()"
+              aria-label="Example icon button with a plus one icon">
+        <mat-icon>plus_one</mat-icon>
+      </button>
+
+      <button mat-mini-fab color="warn"
+              (click)="downvote()"
+              aria-label="Example icon button with a plus one icon">
+        <mat-icon>exposure_neg_1</mat-icon>
+      </button>
+
+      <button mat-raised-button color="accent" (click)="reset()">reset</button>
+    </div>
+  </div>
+</div>
